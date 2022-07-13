@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  fastapi:
+    container_name: fastapi
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - ../:/workspace:cached
+    build:
+      context: ../ 

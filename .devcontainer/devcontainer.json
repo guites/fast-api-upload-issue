@@ -1,0 +1,18 @@
+{
+    "dockerComposeFile": "./docker-compose.dev.yaml",
+    "service": "fastapi",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "vscode",
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+    ],
+    "settings": {
+        "python.formatting.provider":"black",
+        "python.formatting.blackPath": "/home/vscode/.local/bin/black",
+        "[python]": {
+            "editor.formatOnSave": true
+        }
+    }
+}
