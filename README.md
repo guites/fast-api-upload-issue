@@ -1,6 +1,6 @@
 # fast-api-upload-issue
 
-This repo contains the minimum necessary code to reproduce a bug with fastAPI upload, in which sending multiple paralel requests to an endpoint using `uploadFile` causes some requests to hang, as in they don't complete nor error out.
+This repo contains the minimum necessary code to reproduce a bug(see https://github.com/tiangolo/fastapi/issues/5141) with fastAPI upload, in which sending multiple paralel requests to an endpoint using `uploadFile` causes some requests to hang, as in they don't complete nor error out.
 
 This repo constains a docker-compose and Dockerfile, and can be used with VSCode's devcontainer.
 
