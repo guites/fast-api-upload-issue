@@ -4,7 +4,22 @@ This repo contains the minimum necessary code to reproduce a bug(see https://git
 
 This repo constains a docker-compose and Dockerfile, and can be used with VSCode's devcontainer.
 
-All you need to do is clone the repo, build the container and run `python3 main.py` inside the container.
+## Steps to reproduce
+
+clone the repo: `git clone git@github.com:guites/fast-api-upload-issue.git`
+
+Using VS Code's devcontainer:
+
+- Open the directory with VS Code.
+- Click on View -> Command Palette and select "Dev Containers: Reopen in Container"
+- install dependencies `pip3 install -r requirements.txt`
+- start the server by running `python3 main.py`
+
+Using Docker:
+
+- Build an image from the Dockerfile: `docker build . -t bug-repro-fastapi`
+- Run that image, mapping to a port: `docker run -p 8000:8000 bug-repro-fastapi`
+
 Then, access http://localhost:8000 and, using the file input, select a file bigger than ~60kb. The javascript code will automatically attempt to POST the file 100 times to the file upload endpoint, which will cause the hanging.
 
 To check that the bug is indeed happening, open the developer tools' networking tab before starting the uploads:
